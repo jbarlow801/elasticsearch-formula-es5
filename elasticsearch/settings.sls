@@ -1,20 +1,10 @@
 {% from "elasticsearch/map.jinja" import elasticsearch_map with context %}
 
 {% set version = salt['pillar.get']('elasticsearch:version') %}
-{% if version %}
-  {% set major_version = int(str(version)[0]) %}
+{% if version > 5 %}
+  {% set major_version = 5 %}
 {% else %}
-  {% set pillar_major_version = salt['pillar.get']('elasticsearch:major_version') %}
-  {% if pillar_major_version %}
-    {% set major_version = pillar_major_version %}
-  {% else %}
-    {% set pkg_version = salt['pkg.version'](elasticsearch_map.pkg) %}
-    {% if pkg_version %}
-      {% set major_version = pkg_version[0] | int %}
-    {% else %}
-      {% set major_version = False %}
-    {% endif %}
-  {% endif %}
+  {% set pillar_major_version = 2 %}
 {% endif %}
 
 {% set elasticsearch = {} %}
