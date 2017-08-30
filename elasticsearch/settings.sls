@@ -1,15 +1,8 @@
-# Previously states directly looked up elasticsearch:major_version.
-# Now giving elasticsearch:major_version higher precedence, but for those
-# with major_version set and version not set, continue to honor the
-# major_version setting. If the package is already installed, but the pillar
-# data isn't set default to looking up major_version from the package
-# manager.
-
 {% from "elasticsearch/map.jinja" import elasticsearch_map with context %}
 
 {% set version = salt['pillar.get']('elasticsearch:version') %}
 {% if version %}
-  {% set major_version = version[0] | int %}
+  {% set major_version = int(str(version)[0]) %}
 {% else %}
   {% set pillar_major_version = salt['pillar.get']('elasticsearch:major_version') %}
   {% if pillar_major_version %}
