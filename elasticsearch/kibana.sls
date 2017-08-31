@@ -9,7 +9,7 @@ kibana:
 /etc/kibana/kibana.yml:
   file.managed:
     - source: salt://elasticsearch/files/kibana-yml
-    - template: jinga
+    - template: jinja
     - user: root
     - group: root
     - mode: 644
