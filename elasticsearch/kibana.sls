@@ -3,8 +3,7 @@ kibana:
     - refresh: True
   service.running:
     - enable: True
-    - require:
-      - /etc/kibana/kibana.yml
+    - require: /etc/kibana/kibana.yml
 
 /etc/kibana/kibana.yml:
   file.managed:
