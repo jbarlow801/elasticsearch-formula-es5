@@ -23,7 +23,7 @@ elasticsearch_repo:
     - dist: stable
     - file: /etc/apt/sources.list.d/elasticsearch.list
     - keyid: D88E42B4
-    - keyserver: https://pgp.mit.edu
+    - keyserver: http://pgp.mit.edu
     - clean_file: true
 {%- elif grains['os_family'] == 'RedHat' %}
     - name: elasticsearch
