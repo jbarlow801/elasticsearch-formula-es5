@@ -11,6 +11,10 @@ apt-transport-https:
   pkg.installed
 {%- endif %}
 
+es-gpg-key:
+  cmd.run:
+    - name: wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+
 elasticsearch_repo:
   pkgrepo.managed:
     - humanname: Elasticsearch {{ elasticsearch.major_version }}
@@ -22,8 +26,6 @@ elasticsearch_repo:
   {%- endif %}
     - dist: stable
     - file: /etc/apt/sources.list.d/elasticsearch.list
-    - keyid: D88E42B4
-    - keyserver: http://pgp.mit.edu
     - clean_file: true
 {%- elif grains['os_family'] == 'RedHat' %}
     - name: elasticsearch
