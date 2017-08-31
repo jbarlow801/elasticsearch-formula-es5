@@ -5,7 +5,7 @@ include:
 {% from "elasticsearch/settings.sls" import elasticsearch with context %}
 
 elasticsearch_pkg:
-  pkg.installed:
+  pkg.latest:
     - name: {{ elasticsearch_map.pkg }}
 #    {% if elasticsearch.version %}
 #    - version: {{ elasticsearch.version }}
