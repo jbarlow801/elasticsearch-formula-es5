@@ -27,3 +27,14 @@ elasticsearch_cfg:
       - service: elasticsearch
 {% endif %}
 {% endfor %}
+
+{%- if salt['pillar.get']('elasticsearch:jvmoptions') %}
+jvm_options:
+  file.serialize:
+    - name: /etc/elasticsearch/jvm.options
+    - dataset_pillar: elasticsearch:jvmoptions
+    - formatter: yaml
+    - -user: root
+    - require:
+      - sls: elasticsearch.pkg
+{% - endif %}
