@@ -37,4 +37,4 @@ jvm_options:
     - user: root
     - require:
       - sls: elasticsearch.pkg
-{% - endif %}
+{%- endif %}
