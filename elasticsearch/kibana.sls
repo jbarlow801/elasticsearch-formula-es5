@@ -13,3 +13,10 @@ kibana:
     - user: root
     - group: root
     - mode: 644
+
+/es/logs/kibana:
+  file.directory:
+    - user: kibana
+    - group: kibana
+    - require:
+      - pkg: kibana

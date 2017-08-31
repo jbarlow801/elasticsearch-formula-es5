@@ -1,0 +1,6 @@
+{% set ip4 = grains['ipv4'][0] -%}
+server.port: 5601
+server.host: {{ ip4 }}
+elasticsearch.url: http://{{ ip4 }}:9200
+server.name: "MCP elasticlog"
+logging.dest: /var/log/kibana/kibana.log
