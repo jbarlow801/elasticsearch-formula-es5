@@ -7,8 +7,8 @@ include:
 elasticsearch_pkg:
   pkg.installed:
     - name: {{ elasticsearch_map.pkg }}
-    {% if elasticsearch.version %}
-    - version: {{ elasticsearch.version }}
-    {% endif %}
+#    {% if elasticsearch.version %}
+#    - version: {{ elasticsearch.version }}
+#    {% endif %}
     - require:
       - sls: elasticsearch.repo
