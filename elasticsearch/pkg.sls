@@ -5,10 +5,10 @@ include:
 {% from "elasticsearch/settings.sls" import elasticsearch with context %}
 
 elasticsearch_pkg:
-  pkg.latest:
+  pkg.installed:
     - name: {{ elasticsearch_map.pkg }}
-#    {% if elasticsearch.version %}
-#    - version: {{ elasticsearch.version }}
-#    {% endif %}
+    {% if elasticsearch.version %}
+    - version: 5.5.2
+    {% endif %}
     - require:
       - sls: elasticsearch.repo
