@@ -34,7 +34,7 @@ jvm_options:
     - name: /etc/elasticsearch/jvm.options
     - dataset_pillar: elasticsearch:jvmoptions
     - formatter: yaml
-    - -user: root
+    - user: root
     - require:
       - sls: elasticsearch.pkg
 {% - endif %}
