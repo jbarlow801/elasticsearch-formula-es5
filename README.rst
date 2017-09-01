@@ -1,7 +1,7 @@
 Elasticsearch
 =============
 
-Formula to install and configure Elasticsearch. Supports 2.x and 5.x.
+Formula to install and configure Elasticsearch 5.x.
 
 
 .. note::
@@ -53,6 +53,10 @@ Configures defaults/sysconfig env vars for the Elasticsearch service.
 
 Allows configuration of elasticsearch plugins.
 
+``elasticsearch.kibana``
+-------------------------
+
+Allows installation of Kibana!
 
 Notes
 =====
