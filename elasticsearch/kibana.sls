@@ -14,7 +14,7 @@ kibana:
     - group: root
     - mode: 644
 
-/es/logs/kibana:
+/es/kibana:
   file.directory:
     - user: kibana
     - group: kibana

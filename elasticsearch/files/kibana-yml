@@ -3,4 +3,4 @@ server.port: 5601
 server.host: "0.0.0.0"
 elasticsearch.url: http://{{ ip4 }}:9200
 server.name: "RAD elasticlog"
-logging.dest: /es/logs/kibana/kibana.log
+logging.dest: /es/kibana/kibana.log
