@@ -6,7 +6,7 @@ elasticsearch:
     path.data: /es/data
     path.logs: /es/logs
     bootstrap.memory_lock: true
-    network.host: ["{{ grains['ipv4'][0] }}", "127.0.0.1"]
+    network.host: ["0.0.0.0"]
     http.port: 9200
     discovery.zen.ping.unicast.hosts: ["host1", "host2", "host3"]
     discovery.zen.minimum_master_nodes: 3
